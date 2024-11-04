@@ -1,0 +1,39 @@
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+) !default;
+// scss-docs-end spacer-variables-maps
+
+// scss-docs-start theme-color-variables
+$primary:       #3E4A6B;
+$secondary:     #283249;
+$success:       #EF5939;
+$info:          #606572;
+$warning:       #16b907;
+$danger:        #2C5D7C;
+$light:         #fafafa;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light
+) !default;
+// scss-docs-end theme-colors-map
+
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

@@ -1,0 +1,699 @@
+$bcolor: #1C2333;
+$primary:       #3E4A6B;
+$secondary:     #283249;
+$success:       #EF5939;
+$info:          #606572;
+$warning:       #16b907;
+$danger:        #2C5D7C;
+$light:         #fafafa;
+$star:         #effb08;
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $bcolor;
+}
+
+.custom-btn {
+    color: $light;
+    background: $primary;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-btn:hover, 
+.custom-btn.active {
+    background: $success;
+}
+
+a {
+    text-decoration: none;
+}
+
+.fa-star {
+    color: $star;
+}
+
+.shade {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255, 0.5);
+    z-index: 90;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.shade.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+// Header Start
+.header {
+    height: 7vh;
+}
+
+.header .fa-solid {
+    color: $light;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+    .header .fa-solid {
+        display: none;
+    }
+}
+// Header End
+
+// Asidebar-left start
+.left-slidebar {
+    position: relative;
+    padding-top: 30px;
+    width: 50%;
+    left: -999px;
+    display: none;
+    transition: 0.5s ease-in-out;
+}
+
+.left-slidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 20px;
+    font-size: 20px;
+}
+
+@media (min-width: 992px) {
+    .left-slidebar {
+        padding-top: 0;
+        display: block;
+        width: 100%;
+        left: 0;
+    }
+
+    .left-slidebar .close-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .left-slidebar-show {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        z-index: 99;
+        background: $bcolor;
+    }
+}
+
+.left-slidebar .tab-container .tab-item {
+    color: rgba(255, 255, 255, 0.501);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+}
+
+.left-slidebar .tab-container .tab-item:hover,
+.left-slidebar .tab-container .tab-item.active {
+    background: $primary;
+    color: #fff;
+}
+
+.left-slidebar .range-container input[type="range"] {
+    appearance: none;
+    width: 95%;
+    height: 8px;
+    background: $primary;
+    border-radius: 5px;
+    outline: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.left-slidebar .range-container input[type="range"]::-webkit-slider-runnable-track {
+    background-color: $success;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    appearance: none;
+    outline: none;
+}
+
+.left-slidebar .range-container input[type="range"]::-webkit-slider-thumb {
+    background-color: $success;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    appearance: none;
+    border: none;
+}
+
+.left-slidebar .range-container input[type="range"]::-moz-range-thumb {
+    background-color: $success;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: 0;
+    border-radius: 10px;
+}
+
+.left-slidebar .range-container .range-numbers {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.left-slidebar .range-container .range-numbers .range-number {
+    color: $light;
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-link {
+    color: rgb(255, 255, 255, 0.6);
+}
+
+.left-slidebar .live-menu .menu-item:hover .menu-item-link,
+.left-slidebar .live-menu .menu-item.active .menu-item-link {
+    color: $light;
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-right .fa-solid {
+    transition: 0.3s;
+}
+
+.left-slidebar .live-menu .menu-item:hover .menu-item-link .menu-item-right .fa-solid,
+.left-slidebar .live-menu .menu-item.active .menu-item-link .menu-item-right .fa-solid {
+    transform: rotate(90deg);
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1 {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.left-slidebar .live-menu .menu-item.active .menu-item-content-1,
+.left-slidebar .live-menu .menu-item:hover .menu-item-content-1 {
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1 .country {
+    color: rgb(255, 255, 255, .6);
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1.active .country,
+.left-slidebar .live-menu .menu-item .menu-item-content-1:hover .country {
+    color: $light;
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1 .country .menu-item-right .fa-solid {
+    transition: 0.3s;
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1.active .country .menu-item-right .fa-solid,
+.left-slidebar .live-menu .menu-item .menu-item-content-1:hover .country .menu-item-right .fa-solid {
+    transform: rotate(90deg);
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1.active .match-info,
+.left-slidebar .live-menu .menu-item .menu-item-content-1:hover .match-info {
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.left-slidebar .live-menu .menu-item .time-score-infos,
+.left-slidebar .live-menu .menu-item .market-name {
+    color: rgb(255, 255, 255, 0.5);
+    padding: 5px 0;
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn {
+    flex-grow: 1;
+    margin-right: 4px;
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn:last-child {
+    margin-right: 0;
+}
+
+// Asidebar-left End
+
+
+// Main Container Left Start
+
+// Today Event
+.main-left-container .today-event-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255, 0.6);
+}
+
+.main-left-container .today-event-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.main-left-container .today-event-content::-webkit-scrollbar {
+    height: 8px;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.main-left-container .today-event-content::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.main-left-container .today-event {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    border-radius: 8px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.main-left-container .today-event .fa-solid {
+    font-size: 24px;
+    color: rgb(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+.main-left-container .today-event span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.main-left-container .today-event .count {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+    padding: 4px 7px;
+    border-radius: 50%;
+    background: $secondary;
+}
+
+.main-left-container .today-event.active span,
+.main-left-container .today-event.active .fa-solid,
+.main-left-container .today-event:hover span,
+.main-left-container .today-event:hover .fa-solid {
+    color: $light;
+}
+
+
+// Upcoming Event
+.main-left-container .upcoming-events .upcoming-events-header span {
+    font-size: 20px;
+    color: rgb(255, 255, 255, .6);
+}
+
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event {
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin-right: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event.active,
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event:hover {
+    background: $secondary;
+    border-radius: 4px;
+    padding: 3px 6px;
+}
+
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event .fa-solid {
+    color: rgb(255, 255, 255, .6);
+    transition: 0.3s ease;
+}
+
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event .text {
+    color: rgba(255, 255, 255, 0.6);
+    display: none;
+    font-size: 14px;
+    transition: .3s ease;
+}
+
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event.active .text,
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event:hover .text {
+    display: block;
+    color: $light;
+}
+
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event.active .fa-solid,
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event:hover .fa-solid {
+    color: $light;
+}
+
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 36%;
+    width: 30%;
+    height: 3px;
+    background-color: $star;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event.active::before,
+.main-left-container .upcoming-events .upcoming-events-content .upcoming-event:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+// Upcoming Events Body
+
+.main-left-container .upcoming-events .upcoming-events-body .upcoming-fixture .upcoming-fixture-header .item {
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main-left-container .upcoming-events .upcoming-events-body .upcoming-fixture .upcoming-fixture-body .item .time {
+    color: #3e03ffbd;
+    font-size: 14px;
+}
+
+.main-left-container .upcoming-events .upcoming-events-body .upcoming-fixture .upcoming-fixture-body .item .date {
+    color: rgb(255, 255, 255, .6);
+    font-size: 14px;
+}
+
+.main-left-container .upcoming-events .upcoming-events-body .upcoming-fixture .upcoming-fixture-body .item .item-element span {
+    font-size: 12px;
+    color: $light;
+    font-weight: 600;
+}
+
+.main-left-container .upcoming-events .upcoming-events-body .upcoming-fixture .upcoming-fixture-body .item span.live {
+    font-size: 12px;
+    font-weight: bold;
+    color: $light;
+    background: #16b907;
+    padding: 0 15px;
+    border-radius: 5px 0 5px 0;
+}
+
+// Casino Games
+
+.main-left-container .casino-games .casino-games-header span {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255, .6);
+    text-transform: capitalize;
+}
+
+.main-left-container .casino-games .casino-games-content {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.main-left-container .casino-games .casino-games-content .casino-card {
+    flex: 0 0 auto;
+    width: 180px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.main-left-container .casino-games .casino-games-content .casino-card .card-img {
+    position: relative;
+}
+
+.main-left-container .casino-games .casino-games-content .casino-card .card-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.main-left-container .casino-games .casino-games-content .casino-card .game-info {
+    font-size: 12px;
+    color: $light;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 5px;
+    background: #5433fc;
+    border-radius: 5px;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.main-left-container .casino-games .casino-games-content .casino-card .card-img .card-hover {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+    transition: 0.5s all ease;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.main-left-container .casino-games .casino-games-content .casino-card:hover .card-img .card-hover {
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.main-left-container .casino-games .casino-games-content .casino-card .card-img .card-hover .real {
+    color: $light;
+    background: $success;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.main-left-container .casino-games .casino-games-content .casino-card .card-img .card-hover .free {
+    color: $light;
+    background: $danger;
+    padding: 5px 22px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.main-left-container .casino-games .casino-games-content .casino-card .game-title {
+    color: rgb(255, 255, 255, .6);
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+// Main Container Left End
+
+// Main Container Right Start
+.main-right-container .league-module .league-header {
+    position: relative;
+}
+
+.main-right-container .league-module .league-header .league-header-bottom {
+    position: absolute;
+    width: 100%;
+    padding: 5px 8px;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.main-right-container .league-module .league-header .league-header-bottom .right .custom-btn {
+    padding: 10px 10px;
+}
+
+.main-right-container .league-module .league-module-body .left-side span,
+.main-right-container .league-module .league-module-body .right-side span {
+    color: rgba(255, 255, 255, .6);
+    font-size: 12px;
+}
+
+.main-right-container .league-module .league-module-body .item .custom-btn {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+// Main Container Right End
+
+
+// Right Side Start
+.right-sidebar {
+    background: $bcolor;
+    height: 100vh;
+    position: relative;
+    width: 50%;
+    display: none;
+    transition: 0.5s ease;
+}
+
+.right-sidebar .close-icon .fa-solid {
+    position: absolute;
+    right: 10px;
+}
+
+@media (min-width: 992px) {
+    .right-sidebar {
+        width: 100%;
+        display: block;
+    }
+
+    .right-sidebar .close-icon .fa-solid {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .right-sidebar-show {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        z-index: 99;
+        background: $bcolor;
+        padding: 10px;
+    }
+}
+
+.right-sidebar .top-part {
+    background: #c7deec;
+}
+
+.right-sidebar .top-part .header .betslip {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.right-sidebar .top-part .header .betslip .count {
+    padding: 3px 5px;
+    color: $light;
+    background: #aca9a9;
+    border-radius: 50%;
+}
+
+.right-sidebar .top-part .header .trash .fa-solid {
+    color: $danger;
+    display: block;
+}
+
+.right-sidebar .top-part .top-link a {
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 3px;
+    transition: 0.3s ease;
+}
+
+.right-sidebar .top-part .top-link a.active,
+.right-sidebar .top-part .top-link a:hover {
+    color: #000;
+    border-bottom: 4px solid $success;
+    border-radius: 5px;
+}
+
+.right-sidebar .top-part .item {
+    position: relative;
+}
+
+.right-sidebar .top-part .item .fa-solid.fa-xmark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.right-sidebar .top-part .input input {
+    border: 10px solid $danger;
+    border-radius: 10px;
+}
+
+.right-sidebar .bottom-part .cupon-check .coupon-content .coupon-tab .custom-btn {
+    padding: 5px 8px;
+}
+
+.right-sidebar .bottom-part .cupon-check .coupon-content .number-count .item {
+    color: $light;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: $bcolor;
+    border-radius: 8px;
+    margin: 2px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.right-sidebar .bottom-part .cupon-check .coupon-content .number-count .number {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.right-sidebar .bottom-part .cupon-check .coupon-content .number-count .back-ok {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.right-sidebar .bottom-part .cupon-check .coupon-content .number-count .backspace {
+    padding: 28px 15px;
+    background: $bcolor;
+    border-radius: 8px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+// Right Side End
+
+
+

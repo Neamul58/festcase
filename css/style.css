@@ -192,7 +192,8 @@ a {
 }
 
 .left-slidebar .live-menu .menu-item.active .menu-item-content-1,
-.left-slidebar .live-menu .menu-item:hover .menu-item-content-1 {
+.left-slidebar .live-menu .menu-item:hover .menu-item-content-1,
+.left-slidebar .live-menu .menu-item:active .menu-item-content-1 {
   height: 100%;
   visibility: visible;
   opacity: 1;
@@ -205,6 +206,7 @@ a {
 .left-slidebar .live-menu .menu-item .menu-item-content-1.active .country,
 .left-slidebar .live-menu .menu-item .menu-item-content-1:hover .country {
   color: #fafafa;
+  cursor: pointer;
 }
 
 .left-slidebar .live-menu .menu-item .menu-item-content-1 .country .menu-item-right .fa-solid {
@@ -224,6 +226,7 @@ a {
 }
 
 .left-slidebar .live-menu .menu-item .menu-item-content-1.active .match-info,
+.left-slidebar .live-menu .menu-item .menu-item-content-1:active .match-info,
 .left-slidebar .live-menu .menu-item .menu-item-content-1:hover .match-info {
   height: 100%;
   visibility: visible;
@@ -239,8 +242,49 @@ a {
 .left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn {
   flex-grow: 1;
   margin-right: 4px;
+  position: relative;
 }
 
+.left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  right: -8px;
+  top: -8px;
+  border: 8px solid;
+  color: rgba(62, 74, 107, 0);
+  transform: rotate(-45deg);
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  50% {
+    border-color: transparent transparent transparent #16b907;
+  }
+}
+.left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn.bounceB::before {
+  display: none;
+}
+
+.left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn.bounceB::after {
+  position: absolute;
+  content: "";
+  right: -8px;
+  bottom: -8px;
+  width: 0;
+  height: 0;
+  border: 8px solid;
+  color: rgba(62, 74, 107, 0);
+  transform: rotate(45deg);
+  animation: bounceBottom 1s infinite;
+}
+
+@keyframes bounceBottom {
+  50% {
+    border-color: transparent transparent transparent red;
+  }
+}
 .left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn:last-child {
   margin-right: 0;
 }

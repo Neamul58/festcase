@@ -250,17 +250,17 @@ a {
   content: "";
   width: 0;
   height: 0;
-  right: -8px;
-  top: -8px;
+  right: 0;
+  top: 0;
   border: 8px solid;
+  border-radius: 0 6px 0 0;
   color: rgba(62, 74, 107, 0);
-  transform: rotate(-45deg);
   animation: bounce 1s infinite;
 }
 
 @keyframes bounce {
   50% {
-    border-color: transparent transparent transparent #16b907;
+    border-color: #16b907 #16b907 transparent transparent;
   }
 }
 .left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn.bounceB::before {
@@ -270,19 +270,19 @@ a {
 .left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn.bounceB::after {
   position: absolute;
   content: "";
-  right: -8px;
-  bottom: -8px;
+  right: 0;
+  bottom: 0;
   width: 0;
   height: 0;
   border: 8px solid;
+  border-radius: 0 0 6px 0;
   color: rgba(62, 74, 107, 0);
-  transform: rotate(45deg);
   animation: bounceBottom 1s infinite;
 }
 
 @keyframes bounceBottom {
   50% {
-    border-color: transparent transparent transparent red;
+    border-color: transparent red red transparent;
   }
 }
 .left-slidebar .live-menu .menu-item .menu-item-content-1 .match-info .btn-group .custom-btn:last-child {
